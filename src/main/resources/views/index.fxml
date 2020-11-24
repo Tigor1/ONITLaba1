@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.stankin.laba1.controller.AppController">
+   <children>
+      <TableView fx:id="table" layoutX="14.0" layoutY="14.0" prefHeight="249.0" prefWidth="650.0">
+        <columns>
+          <TableColumn fx:id="idC" prefWidth="20.0" text="ID" />
+          <TableColumn fx:id="markC" prefWidth="129.0" text="Марка " />
+            <TableColumn fx:id="modelC" prefWidth="139.0" text="Модель" />
+            <TableColumn fx:id="creationDateC" prefWidth="96.0" text="Год выпуска" />
+            <TableColumn fx:id="priceC" minWidth="5.0" text="Стоимость" />
+            <TableColumn fx:id="saleDateC" prefWidth="110.0" text="Дата продажи" />
+            <TableColumn fx:id="autoTransmissionC" minWidth="5.0" prefWidth="75.0" text="Автомат" />
+        </columns>
+      </TableView>
+      <Pane layoutX="14.0" layoutY="270.0" prefHeight="257.0" prefWidth="341.0">
+         <children>
+            <Label prefHeight="26.0" prefWidth="148.0" text="Добавление данных:" />
+            <Label layoutX="10.0" layoutY="36.0" prefHeight="17.0" prefWidth="114.0" text="Марка автомобиля:" />
+            <Label layoutX="10.0" layoutY="71.0" text="Название модели:" />
+            <Label layoutX="10.0" layoutY="104.0" text="Год выпуска:" />
+            <Label layoutX="10.0" layoutY="138.0" text="Стоимость:" />
+            <Label layoutX="10.0" layoutY="206.0" text="Автоматическая коробка передач:" />
+            <CheckBox fx:id="autoTransmissionCB" layoutX="203.0" layoutY="208.0" mnemonicParsing="false" />
+            <TextField fx:id="priceTF" layoutX="203.0" layoutY="134.0" prefHeight="25.0" prefWidth="124.0" />
+            <TextField fx:id="makrAddTF" layoutX="203.0" layoutY="32.0" prefHeight="25.0" prefWidth="124.0" />
+            <TextField fx:id="modelTF" layoutX="203.0" layoutY="67.0" prefHeight="25.0" prefWidth="124.0" />
+            <Button fx:id="addBtn" layoutX="233.0" layoutY="225.0" mnemonicParsing="false" onAction="#addCar" prefHeight="25.0" prefWidth="94.0" text="Добавить" />
+            <Label layoutX="10.0" layoutY="172.0" text="Дата продажи" />
+            <DatePicker fx:id="saleDateDP" layoutX="203.0" layoutY="168.0" prefHeight="25.0" prefWidth="124.0" />
+            <TextField fx:id="creationDateTF" layoutX="203.0" layoutY="100.0" prefHeight="25.0" prefWidth="124.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="373.0" layoutY="306.0" prefHeight="226.0" prefWidth="291.0">
+         <children>
+            <Label prefHeight="26.0" prefWidth="148.0" text="Фильтрация данных:" />
+            <Label layoutX="10.0" layoutY="27.0" text="Дата продажи:" />
+            <Label layoutX="10.0" layoutY="59.0" text="Дата продажи:" />
+            <Label layoutX="10.0" layoutY="91.0" text="Стоимость от:" />
+            <Label layoutX="10.0" layoutY="122.0" text="Стоимость до:" />
+            <DatePicker layoutX="167.0" layoutY="23.0" prefHeight="25.0" prefWidth="124.0" />
+            <DatePicker layoutX="167.0" layoutY="55.0" prefHeight="25.0" prefWidth="124.0" />
+            <TextField layoutX="167.0" layoutY="87.0" prefHeight="25.0" prefWidth="124.0" />
+            <TextField layoutX="167.0" layoutY="118.0" prefHeight="25.0" prefWidth="124.0" />
+            <CheckBox layoutX="167.0" layoutY="153.0" mnemonicParsing="false" />
+            <Label layoutX="10.0" layoutY="153.0" text="Наличие автомата:" />
+            <Button fx:id="filterBtn" layoutX="197.0" layoutY="187.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Фильтровать" />
+         </children>
+      </Pane>
+      <Button fx:id="deleteBtn" layoutX="373.0" layoutY="270.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="107.0" text="Удалить строку" />
+      <Button fx:id="dropFilterBtn" layoutX="557.0" layoutY="270.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="107.0" text="Сброс фильтров" />
+   </children>
+</AnchorPane>

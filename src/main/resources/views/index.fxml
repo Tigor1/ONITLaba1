@@ -44,20 +44,20 @@
       <Pane layoutX="373.0" layoutY="306.0" prefHeight="226.0" prefWidth="291.0">
          <children>
             <Label prefHeight="26.0" prefWidth="148.0" text="Фильтрация данных:" />
-            <Label layoutX="10.0" layoutY="27.0" text="Дата продажи:" />
-            <Label layoutX="10.0" layoutY="59.0" text="Дата продажи:" />
-            <Label layoutX="10.0" layoutY="91.0" text="Стоимость от:" />
-            <Label layoutX="10.0" layoutY="122.0" text="Стоимость до:" />
-            <DatePicker layoutX="167.0" layoutY="23.0" prefHeight="25.0" prefWidth="124.0" />
-            <DatePicker layoutX="167.0" layoutY="55.0" prefHeight="25.0" prefWidth="124.0" />
-            <TextField layoutX="167.0" layoutY="87.0" prefHeight="25.0" prefWidth="124.0" />
-            <TextField layoutX="167.0" layoutY="118.0" prefHeight="25.0" prefWidth="124.0" />
-            <CheckBox layoutX="167.0" layoutY="153.0" mnemonicParsing="false" />
-            <Label layoutX="10.0" layoutY="153.0" text="Наличие автомата:" />
-            <Button fx:id="filterBtn" layoutX="197.0" layoutY="187.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Фильтровать" />
+            <Label layoutX="10.0" layoutY="27.0" text="Год выпуска:" />
+            <Label layoutX="14.0" layoutY="92.0" text="Стоимость от:" />
+            <Label layoutX="14.0" layoutY="126.0" text="Стоимость до:" />
+            <TextField fx:id="priceFromFTF" layoutX="167.0" layoutY="88.0" prefHeight="25.0" prefWidth="124.0" />
+            <TextField fx:id="priceUpToFTF" layoutX="167.0" layoutY="122.0" prefHeight="25.0" prefWidth="124.0" />
+            <CheckBox fx:id="autoTransmissionFCB" layoutX="167.0" layoutY="155.0" mnemonicParsing="false" />
+            <Label layoutX="14.0" layoutY="155.0" text="Наличие автомата:" />
+            <Button fx:id="filterBtn" layoutX="167.0" layoutY="187.0" mnemonicParsing="false" onAction="#filter" prefHeight="25.0" prefWidth="94.0" text="Фильтровать" />
+            <TextField fx:id="creationDateFTF" layoutX="167.0" layoutY="23.0" prefHeight="25.0" prefWidth="124.0" />
+            <Label layoutX="14.0" layoutY="57.0" text="Дата продажи:" />
+            <DatePicker fx:id="saleDateFDP" layoutX="167.0" layoutY="53.0" prefHeight="25.0" prefWidth="124.0" />
          </children>
       </Pane>
-      <Button fx:id="deleteBtn" layoutX="373.0" layoutY="270.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="107.0" text="Удалить строку" />
-      <Button fx:id="dropFilterBtn" layoutX="557.0" layoutY="270.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="107.0" text="Сброс фильтров" />
+      <Button fx:id="deleteBtn" layoutX="373.0" layoutY="270.0" mnemonicParsing="false" onAction="#deleteCar" prefHeight="33.0" prefWidth="107.0" text="Удалить строку" />
+      <Button fx:id="dropFilterBtn" layoutX="557.0" layoutY="270.0" mnemonicParsing="false" onAction="#dropFilter" prefHeight="33.0" prefWidth="107.0" text="Сброс фильтров" />
    </children>
 </AnchorPane>

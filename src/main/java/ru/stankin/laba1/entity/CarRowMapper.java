@@ -16,7 +16,7 @@ public class CarRowMapper implements RowMapper<Car> {
         return new Car( rs.getLong("car_id"),
                         rs.getString("mark"),
                         rs.getString("model"),
-                        rs.getDate("creation_date"),
+                        rs.getInt("creation_date"),
                         rs.getDate("sale_date"),
                         rs.getFloat("price"),
                         rs.getBoolean("autoTransmission")

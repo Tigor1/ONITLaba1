@@ -9,12 +9,12 @@ public class Car {
     private long id;
     private String mark;
     private String model;
-    private Date creationDate;
+    private int creationDate;
     private Date saleDate;
     private float price;
     private boolean autoTransmission;
 
-    public Car(long id, String mark, String model, Date creationDate, Date saleDate, float price, boolean autoTransmission) {
+    public Car(long id, String mark, String model, int creationDate, Date saleDate, float price, boolean autoTransmission) {
         this.id = id;
         this.mark = mark;
         this.model = model;
@@ -24,7 +24,7 @@ public class Car {
         this.autoTransmission = autoTransmission;
     }
 
-    public Car(String mark, String model, Date creationDate, Date saleDate, float price, boolean autoTransmission) {
+    public Car(String mark, String model, int creationDate, Date saleDate, float price, boolean autoTransmission) {
         this.mark = mark;
         this.model = model;
         this.creationDate = creationDate;
@@ -65,11 +65,11 @@ public class Car {
         this.autoTransmission = autoTransmission;
     }
 
-    public Date getCreationDate() {
+    public int getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(int creationDate) {
         this.creationDate = creationDate;
     }
 

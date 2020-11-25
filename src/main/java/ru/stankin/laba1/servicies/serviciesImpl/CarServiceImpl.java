@@ -7,6 +7,8 @@ import ru.stankin.laba1.entity.Car;
 import ru.stankin.laba1.entity.CarRowMapper;
 import ru.stankin.laba1.servicies.CarService;
 
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -49,5 +51,18 @@ public class CarServiceImpl implements CarService {
         String sqlRequest = "DELETE FROM Car WHERE car_id=?";
 
         return  this.jdbcTemplate.update(sqlRequest, id);
+    }
+
+    public List<Car> filter(int creationYear, Date saleDate, float priceFrom, float priceUpTo, boolean autoTransmission) {
+        List<Object> objects = new ArrayList<>();
+        String sqlRequest = "SELECT * FROM Car WHERE ";
+        if (creationYear > 0) {sqlRequest += "creation_date=? AND "; objects.add(creationYear); }
+        if (saleDate != null) { sqlRequest += "sale_date=? AND "; objects.add(saleDate); }
+        if (priceFrom > 0) { sqlRequest += "price>=? AND "; objects.add(priceFrom); }
+        if (priceUpTo > 0) { sqlRequest += "price<=? AND "; objects.add(priceUpTo); }
+        sqlRequest += "autoTransmission=?";
+        objects.add(autoTransmission);
+
+        return this.jdbcTemplate.query(sqlRequest, objects.toArray(), new CarRowMapper());
     }
 }
